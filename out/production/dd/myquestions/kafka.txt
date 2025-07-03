@@ -1,0 +1,65 @@
+I asked 50+ software engineers this question during system design interviews, and only 40% gave a satisfactory answer. The question?
+
+"Why is Kafka faster than RabbitMQ when multiple consumers need independent log traversal?"
+
+► Why did I ask this?
+
+1. It tests depth of knowledge.
+ Anyone can say “Kafka is faster,” but can they explain why?
+
+2. It highlights trade-off awareness.
+ Engineers need to understand when to use Kafka vs RabbitMQ—not just pick one blindly.
+
+3. It evaluates scalability thinking.
+ Modern systems handle massive traffic and real-time data, so engineers must know how tools scale.
+
+4. It reveals clarity in communication.
+ Good engineers can explain complex systems simply, a skill that matters as much as technical depth.
+
+► Now, let’s break down the answer:
+
+ 1. Message Handling Models
+
+- RabbitMQ (Message Broker):
+ - Uses queues with shared cursors, delivering each message to one consumer at a time.
+ - Tracks locks on messages to manage “in-progress” status.
+ - Deletes messages after they’re acknowledged or unlocks them for redelivery.
+
+- Kafka (Log Ingestor):
+ - Stores messages in a log and lets consumers manage their own cursors (offsets).
+ - No lock management,consumers just pull messages based on offsets.
+ - Keeps all messages until explicitly deleted, allowing multiple consumers to traverse logs independently.
+
+
+ 2. Compute Overhead
+
+- RabbitMQ:
+ - Supports filtering, deduplication, scheduling, and expiration.
+ - These features require additional compute work and indexing, slowing throughput.
+
+- Kafka:
+ - Focuses purely on log storage and retrieval.
+ - No filtering, locks, or deduplication,just sequential reads for maximum performance.
+
+ 3. Performance Bottlenecks
+
+- RabbitMQ’s bottleneck:
+ - Shared cursors and lock management create contention at the head of the queue.
+ - This limits scaling when multiple consumers need the same data.
+
+- Kafka’s advantage:
+ - No locks, no shared cursors, just clients reading directly from the log.
+ - Faster, parallel consumption for high-throughput scenarios.
+
+Key Takeaways?
+
+- RabbitMQ is great for task distribution, dispatching jobs to workers.
+- Kafka shines in real-time data pipelines where multiple consumers need independent access to the same data.
+
+The difference isn’t just “Kafka is faster.” It’s about how they handle data, manage state, and distribute work.
+
+► Another question for you:
+
+If your system needed deduplication and message ordering guarantees, would Kafka still be the right choice? Or would you rethink the architecture?
+
+Think about it and don’t just memorize answers from the internet. Understand why.

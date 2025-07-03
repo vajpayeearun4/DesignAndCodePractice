@@ -1,0 +1,113 @@
+🔥 Easy Level (Beginner-Friendly)
+Find the smallest and largest element in an array
+
+🔹 Example: arr = [3, -2, 5, -1, 4] → min = -2, max = 5
+
+Solution: Iterate and track min/max in O(N).
+
+🔗 LeetCode 1299
+
+Move all negative numbers to one side of the array
+
+🔹 Example: arr = [1, -2, -3, 4, 5] → [-2, -3, 1, 4, 5]
+
+Solution: Two-pointer approach, O(N).
+
+🔗 GFG - Move negatives to beginning
+
+Find the first missing positive integer
+
+🔹 Example: arr = [3, 4, -1, 1] → 2
+
+Solution: Cyclic Sort, O(N).
+
+🔗 LeetCode 41
+
+Segregate positive and negative numbers in an array
+
+🔹 Example: arr = [-12, 11, -13, -5, 6, -7, 5, -3, -6] → [-12, -13, -5, -7, -3, -6, 11, 6, 5]
+
+Solution: Partition algorithm (Two pointers).
+
+🚀 Medium Level (Interview Standard)
+Kadane's Algorithm (Maximum Subarray Sum with Negatives)
+
+🔹 Example: arr = [-2, -3, 4, -1, -2, 1, 5, -3] → Max Sum = 7
+
+Solution: Kadane’s Algorithm, O(N).
+
+🔗 LeetCode 53
+
+Two Sum in a sorted array with both positives & negatives
+
+🔹 Example: arr = [-4, -2, 1, 3, 6], target = 1 → (-2, 3)
+
+Solution: Two-pointer approach, O(N).
+
+🔗 LeetCode 167
+
+Subarray with given sum (Handles Negatives)
+
+🔹 Example: arr = [10, -2, 3, -1, 4], sum = 5 → [3, -1, 4]
+
+Solution: Prefix sum + HashMap, O(N).
+
+🔗 LeetCode 560
+
+Find the subarray with maximum product (Handles Negatives)
+
+🔹 Example: arr = [2, -5, 3, -2, 4] → Max product = 120
+
+Solution: Dynamic Programming, O(N).
+
+🔗 LeetCode 152
+
+Find the longest subarray with sum = 0
+
+🔹 Example: arr = [1, 2, -3, 3, 1] → Length = 3 ([2, -3, 3])
+
+Solution: Prefix Sum + HashMap, O(N).
+
+🔗 GFG - Largest Subarray with Sum 0
+
+🔥 Hard Level (Advanced)
+Longest Consecutive Sequence (Handles Positives & Negatives)
+
+🔹 Example: arr = [100, 4, 200, 1, 3, 2] → Length = 4 ([1,2,3,4])
+
+Solution: HashSet approach, O(N).
+
+🔗 LeetCode 128
+
+Count subarrays with equal number of positives & negatives
+
+🔹 Example: arr = [1, -1, -1, 1, 1, -1] → Count = 5
+
+Solution: Prefix Sum + HashMap, O(N).
+
+🔗 GFG - Count subarrays with equal 1s & -1s
+
+Find the largest sum contiguous subarray with at most one negative element removed
+
+🔹 Example: arr = [-1, 3, -2, 4] → Max sum = 5
+
+Solution: Kadane’s algorithm with extra tracking, O(N).
+
+🔗 LeetCode 1186
+
+Rearrange array such that positive and negative numbers alternate
+
+🔹 Example: arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8] → [5, -5, 2, -2, 4, -8, 7, 0, 1, 8]
+
+Solution: Two-pointer approach, O(N).
+
+🔗 GFG - Rearrange positives & negatives
+
+🔥 Bonus Problems (Very Useful for Interviews)
+Dutch National Flag Problem (Sort positives & negatives in one pass) - LeetCode 75
+
+Find Pairs whose Sum is closest to Zero - GFG
+
+Find Kth Largest or Smallest Element in an Array - LeetCode 215
+
+Find equilibrium index of an array (Sum of left = sum of right) - GFG

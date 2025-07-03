@@ -1,0 +1,11 @@
+Microservices Pattern:
+1. CQRS
+2. SAGA
+3. Circuit Breaker
+4. Service Discovery
+5. Gateway PAttern - rerouting to multiple type of microservices based on input url
+6. SideCar pattern
+7. API COMPOSITE PATTERN
+8. event driven architecture pattern
+9. retry pattern
+10. configuration externalization pattern

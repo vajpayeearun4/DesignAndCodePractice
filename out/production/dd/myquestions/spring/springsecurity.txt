@@ -1,0 +1,50 @@
+Below are the few topics and tips for Spring Security which every Java Spring Boot Developer should know which will help to keep your app secure!
+
+1. Authentication – Verify User Identity
+👉 Implement authentication using form login or Basic Auth.
+👉 Use SecurityFilterChain instead of WebSecurityConfigurerAdapter (since Spring Security 6).
+👉 Store passwords securely using BCryptPasswordEncoder.
+
+2. Authorization – Restrict Access to Resources
+👉 Define URL-based access using .authorizeHttpRequests().
+👉 Secure methods with @PreAuthorize and @PostAuthorize.
+👉 Apply the Principle of Least Privilege to grant minimal required access.
+
+3. CSRF Protection – Prevent Cross-Site Request Forgery
+👉 Enabled by default for stateful applications (e.g., form-based login).
+👉 Disable for stateless APIs and use JWT or OAuth2 instead.
+👉 Use CSRF tokens for form-based apps to prevent forged requests.
+
+4. Password Encoding – Store Passwords Securely
+👉 Always hash passwords using BCrypt, Argon2, or PBKDF2.
+👉 Never store plaintext passwords in the database.
+
+5. Security Context – Manage Authenticated Users
+👉 Spring Security automatically tracks the logged-in user.
+👉 Use SecurityContextHolder to retrieve authentication details.
+👉 Avoid modifying security context manually unless necessary.
+
+6. OAuth2 & OpenID Connect – Secure External Logins
+👉 Integrate Google, GitHub, and other providers using Spring OAuth2.
+👉 Always store access tokens securely and never expose client secrets.
+
+7. JWT (JSON Web Tokens) – Stateless Authentication
+👉 Use JWT instead of session-based authentication for microservices.
+👉 Secure JWTs using HMAC or RSA signing and validate expiration.
+👉 Store tokens in HTTP-only cookies, not in localStorage.
+
+8. Security Filters – Process Requests Securely
+👉 Spring Security uses filter chains to apply security rules.
+👉 Add custom filters if needed (e.g., JWT validation, logging).
+
+9. Method Security – Secure Individual Methods
+👉 Use @EnableMethodSecurity instead of @EnableGlobalMethodSecurity.
+👉 Apply @PreAuthorize("hasRole('USER')") for fine-grained access control
+
+10. Session Management – Prevent Session Hijacking
+👉 Enable session fixation protection and configure session timeouts.
+👉 Use SessionCreationPolicy.STATELESS for REST APIs.
+
+11. Security Testing – Ensure Configurations Are Working
+👉 Use Spring Security Test with @WithMockUser.
+👉 Automate security testing for vulnerabilities.
