@@ -11,7 +11,7 @@ public class Test4 {
             return 0;
         }
         currSum = currSum * 10 + root.val;
-        if (root.left != null && root.right == null) {
+        if (root.left == null && root.right == null) {
             return currSum;
         }
         return sumDigit(root.left, currSum) + sumDigit(root.right, currSum);
