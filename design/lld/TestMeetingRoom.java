@@ -1,4 +1,4 @@
-package design.lld.meeting;
+package design.lld;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

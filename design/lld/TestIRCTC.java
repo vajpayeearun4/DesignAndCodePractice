@@ -13,7 +13,7 @@ class Train {
 class TrainSchedule {
 }
 
-class Booking {
+class Booking1 {
 
 }
 

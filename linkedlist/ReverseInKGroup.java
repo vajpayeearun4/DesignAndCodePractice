@@ -1,22 +1,24 @@
 package linkedlist;
 
+import leetcode.linkedlist.ListNode;
+
 public class ReverseInKGroup {
     public static void main(String[] args) {
 
     }
 
-    LLNode reverseInKGroup(LLNode head, int k){
+    ListNode reverseInKGroup(ListNode head, int k){
         if (head == null || head.next == null) {
             return head;
         }
 
-        LLNode curr = head;
-        LLNode newHead = null;
-        LLNode tail= null;
+        ListNode curr = head;
+        ListNode newHead = null;
+        ListNode tail= null;
         while (curr!=null) {
-            LLNode groupHead = curr;
-            LLNode prev = null;
-            LLNode nextNode = null;
+            ListNode groupHead = curr;
+            ListNode prev = null;
+            ListNode nextNode = null;
             int count =0;
 
             while (curr!=null && count < k){
